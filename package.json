@@ -1,0 +1,54 @@
+{
+  "name": "dsh-easyexcel-anywhere",
+  "version": "0.1.0",
+  "description": "Stream-based, OOM-free Excel(.xlsx) reading & writing in pure TypeScript. Runs on Node.js and in the browser. Inspired by Alibaba EasyExcel.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rmdir /s /q dist 2>nul & exit /b 0",
+    "test": "node --test dist/tests/*.test.js",
+    "bench": "node dist/benchmark/cli.js --rows 1000000",
+    "bench:small": "node dist/benchmark/cli.js --rows 100000",
+    "demo": "node dist/examples/node-demo.js"
+  },
+  "engines": {
+    "node": ">=18.14"
+  },
+  "keywords": [
+    "excel",
+    "xlsx",
+    "easyexcel",
+    "streaming",
+    "web-streams",
+    "oom-free",
+    "backpressure",
+    "typescript",
+    "browser",
+    "zip"
+  ],
+  "author": "DSH Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "pako": "^3.0.3",
+    "reflect-metadata": "^0.2.2",
+    "sax": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/sax": "^1.2.5",
+    "typescript": "~5.9"
+  }
+}
